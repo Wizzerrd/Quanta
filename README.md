@@ -11,7 +11,7 @@ A user can assign an arbitrary number of **types of** quanta, whose **properties
 ## Functionality & Features ##
 
 ### In Emergent Quanta, users will be able to: ###
-- Simulate emergent particle behaviors through a browser application that allows for users to manipulate most aspects of the simulations
+- Simulate emergent particle behaviors through a in a single page application (SPA) that allows for users to manipulate most aspects of the simulations
   - Arbitrary number of particles with adjustable population, gravity, friction, mass, radius, and **interactions**
   - Interactions include granting or taking inertia, killing or being killed, or creating a chosen particle class (mating)
   - Mating can be adjusted to happen after the particle has been alive for a certain amount of frames (also known as "time to maturity")
