@@ -42,6 +42,7 @@ A user can assign an arbitrary number of **types of** quanta, whose **properties
 ## Technologies, Libraries, & APIs ##
 - [HTML Canvas](https://www.w3schools.com/html/html5_canvas.asp) to handle drawing graphics in browser
 - [matter-js](https://github.com/liabru/matter-js) to simulate rigid-body physics for the particles
+- [matter-wrap](https://github.com/liabru/matter-wrap) a plugin for the matter-js library that makes boundary wrapping easy
 - [Chart.js](https://github.com/chartjs/Chart.js) to display analytics in a pleasant format
 
 ## Implementation Timeline ##
