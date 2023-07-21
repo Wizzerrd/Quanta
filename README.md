@@ -32,10 +32,12 @@ A user can assign an arbitrary number of **types of** quanta, whose **properties
 **GRAPHICS AND PERFORMACE SUBJECT TO CHANGE**
 
 ### Main UI ###
-![jsProjectParticles (1)](https://github.com/Wizzerrd/jsProjectLuis/assets/133073175/49cf99af-f10d-48ac-9687-f45c802fe469)
+![jsProjectParticles (1)](https://github.com/Wizzerrd/jsProjectLuis/assets/133073175/f6aefd09-52b2-4ad5-bfb3-6d25ca52396a)
+
 
 ### Overlay ###
-![jsProjectParticles (2)](https://github.com/Wizzerrd/jsProjectLuis/assets/133073175/e7eebddb-3afc-4803-896d-1ee9a667718f)
+![jsProjectParticles (2)](https://github.com/Wizzerrd/jsProjectLuis/assets/133073175/bf65d21a-20bb-4405-8f62-8d4e9f8c95bf)
+
 
 ## Technologies, Libraries, & APIs ##
 - [HTML Canvas](https://www.w3schools.com/html/html5_canvas.asp) to handle drawing graphics in browser
