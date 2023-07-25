@@ -3,12 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Some Life Sim</title>
+    <title>Emergent Quanta</title>
     <link rel="stylesheet" href="dist/main.css" />
     <script src="dist/main.js" defer></script>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <canvas id="game-canvas"></canvas>
+    <div id="nav-bar">
+    </div>
+
+    <div id="main">
+        <div id="left">
+            
+        </div>
+        <div id="mid">
+            <div id="matter"></div>
+        </div>
+        <div id="right">
+            <h2>World Settings</h2>
+
+            <div id="world-settings">
+
+                <label>Boundary:<button id="boundary-toggle">FIXED</button></label>
+                <label>Gravity: <button id="gravity-toggle">OFF</button></label>
+
+                <label>X Magnitude:
+                    <div class="slider-ele"><input type="range" id="x-mag-slider" min="-1" max="1" step="0.01"><label id="x-mag-value">0</label></div>
+                </label>
+
+                <label>Y Magnitude:
+                    <div class="slider-ele"><input type="range" id="y-mag-slider" min="-1" max="1" step="0.01"><label id="y-mag-value">0</label></div>
+                </label>
+
+            </div>
+
+            Particle Settings
+            <div id="ball-settings">
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+    </div>
 </body>
 </html>

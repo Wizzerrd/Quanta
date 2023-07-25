@@ -1,0 +1,33 @@
+#right {
+    display: flex;
+    flex-direction: column;
+}
+
+#world-settings{
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 15%;
+}
+
+#world-settings label{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+#ball-settings{
+    overflow: auto;
+    flex-grow: 1;
+}
+
+#gravity-toggle{
+    background-color: red;
+    border: 1px black solid;
+    height: auto;
+}
+
+.slider-ele{
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body div{
+    border: black 1px solid;
+}
+
+#nav-bar{
+    background-color: blue;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    background-color: bisque;
+    justify-content: space-between;
+}
+
+#left {
+    width: 10%;
+    background-color: aqua;
+}
+
+#right {
+    width: 10%;
+    background-color: red;
+}
+
+#mid {
+    display: relative;
+    background-color: blue;
+}
+
+#matter {
+    background-color: black;
+}
+
+#footer {
+    background-color: blueviolet;
+}
+
+
