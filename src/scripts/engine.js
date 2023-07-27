@@ -208,7 +208,7 @@ class MyEngine{
 
             var created = document.createElement('select');
             created.id = `${thatBall.color}-${thisBall.color}-creation`;
-            created.style.display = 'none'
+            // created.style.display = 'none'
             myEngine.classes.forEach((ballClass)=>{
                 var option = document.createElement('option');
                 option.value = ballClass.color;
@@ -254,7 +254,8 @@ class MyEngine{
         return {x: forceMag * deltX, y: forceMag * deltY};
 
         // formula for universally constant attractive force
-        // return {x: (gravMult * (ball2.position.x - ball1.position.x)), y: (gravMult * (ball2.position.y - ball1.position.y))};
+        // return {x: (gravMult * (ball2.position.x - ball1.position.x)), 
+        // y: (gravMult * (ball2.position.y - ball1.position.y))};
     }
     
     applyGrav = function(ballClass, friendObj){
