@@ -21,11 +21,8 @@ body div{
 #left {
     width: 10%;
     background-color: aqua;
-}
-
-#right {
-    width: 10%;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
 }
 
 #mid {
@@ -37,8 +34,15 @@ body div{
     background-color: black;
 }
 
-#footer {
-    background-color: blueviolet;
+#sim{
+    position: relative;
+}
+
+#play-text{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 40%;
 }
 
 

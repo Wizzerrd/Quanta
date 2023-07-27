@@ -12,37 +12,66 @@
     </div>
 
     <div id="main">
+
         <div id="left">
-            
+            <button id="play-pause">PLAY SIMULATION</button>
+            <button id="reset-button">RESET</button>
+            <button id="random-button">RANDOM SEED</button>
+            <button id="info-button">INFO</button>
+            <div id="debug"></div>
         </div>
+
         <div id="mid">
-            <div id="matter"></div>
+            <div id="matter"><label id="play-text">PRESS PLAY SIMULATION TO START</label></div>
         </div>
+
         <div id="right">
             <h2>World Settings</h2>
 
             <div id="world-settings">
 
-                <label>Boundary:<button id="boundary-toggle">FIXED</button></label>
-                <label>Gravity: <button id="gravity-toggle">OFF</button></label>
+                <div id="boundary-settings"><label>Boundary:<button id="boundary-toggle">FIXED</button></label></div>
 
-                <label>X Magnitude:
-                    <div class="slider-ele"><input type="range" id="x-mag-slider" min="-1" max="1" step="0.01"><label id="x-mag-value">0</label></div>
-                </label>
+                <div id="click-settings">
+                    <label>Click: <button id="click-button">OFF</button></label>
+                    <label>Magnitude: 
+                        <div class="slider-ele">
+                            <input type="range" id="click-mag-slider" min="0" max="1" step="0.01">
+                            <label id="click-mag-value">0.5</label>
+                        </div>
+                    </label>
+                </div>
 
-                <label>Y Magnitude:
-                    <div class="slider-ele"><input type="range" id="y-mag-slider" min="-1" max="1" step="0.01"><label id="y-mag-value">0</label></div>
-                </label>
+                <div id="grav-settings">
+                    <label>Gravity: <button id="gravity-toggle">OFF</button></label>
+                    <label><div>X Magnitude: </div>
+                        <div class="slider-ele">
+                            <input type="range" id="x-mag-slider" min="-1.0" max="1.0" step="0.01">
+                            <label id="x-mag-value">0.0</label>
+                        </div>
+                    </label>
+                    <label><div>Y Magnitude:</div>
+                        <div class="slider-ele">
+                            <input type="range" id="y-mag-slider" min="-1.0" max="1.0" step="0.01">
+                            <label id="y-mag-value">0.0</label>
+                        </div>
+                    </label>
+                </div>
 
             </div>
 
             Particle Settings
             <div id="ball-settings">
+                <div>
+                    <button id="new-ball">Add a Particle</button>
+                    <label>with Population<input type="number" id="pop-counter" max="500" min="1" value="1"></label>
+                </div>
+                <div id="ball-list"></div>
             </div>
         </div>
     </div>
 
-    <div id="footer">
-    </div>
+    <div id="footer">hi</div>
 </body>
+
 </html>

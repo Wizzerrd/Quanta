@@ -75,11 +75,8 @@ body div{
 #left {
     width: 10%;
     background-color: aqua;
-}
-
-#right {
-    width: 10%;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
 }
 
 #mid {
@@ -91,8 +88,15 @@ body div{
     background-color: black;
 }
 
-#footer {
-    background-color: blueviolet;
+#sim{
+    position: relative;
+}
+
+#play-text{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 40%;
 }
 
 
@@ -101,6 +105,7 @@ body div{
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/scrollers.css ***!
   \********************************************************************************************************/
 #right {
+    background-color: red;
     display: flex;
     flex-direction: column;
 }
@@ -113,14 +118,8 @@ body div{
     height: 15%;
 }
 
-#world-settings label{
-    margin-top: 1px;
-    margin-bottom: 1px;
-}
-
 #ball-settings{
     overflow: auto;
-    flex-grow: 1;
 }
 
 #gravity-toggle{

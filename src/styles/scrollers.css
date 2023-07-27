@@ -1,4 +1,5 @@
 #right {
+    background-color: red;
     display: flex;
     flex-direction: column;
 }
@@ -11,14 +12,8 @@
     height: 15%;
 }
 
-#world-settings label{
-    margin-top: 1px;
-    margin-bottom: 1px;
-}
-
 #ball-settings{
     overflow: auto;
-    flex-grow: 1;
 }
 
 #gravity-toggle{
