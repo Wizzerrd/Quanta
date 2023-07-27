@@ -22,6 +22,8 @@ Finally, the number of types of particles is arbitrary, so I had to create a men
 ![ballDiv](https://github.com/Wizzerrd/jsProjectLuis/assets/133073175/94eaaa60-18ae-4ac0-9700-42a032410ab9)
 
 ## Technologies Used ##
+- [matter-js](https://github.com/liabru/matter-js) to simulate rigid-body physics for the particles
+- [matter-wrap](https://github.com/liabru/matter-wrap) (a plugin for the matter-js library) to make boundary wrapping easy
 
 ## TO DO: ("*" indicates an upcoming feature) ##
 - toggle rigid-body interactions
