@@ -7,27 +7,21 @@ body div{
     border: black 1px solid;
 }
 
-#nav-bar{
-    background-color: blue;
-}
-
 #main {
     display: flex;
     flex-direction: row;
-    background-color: bisque;
+    background-color: #c6e2e9;
     justify-content: space-between;
 }
 
 #left {
-    width: 10%;
-    background-color: aqua;
     display: flex;
     flex-direction: column;
 }
 
 #mid {
     display: relative;
-    background-color: blue;
+    background-color: black;
 }
 
 #matter {

@@ -60,22 +60,6 @@ class MyEngine{
     }
 
     runEngine(){ // need to fix
-        for(let i = 0; i < this.classes.length; i++){
-            let found = this.engine.world.bodies.filter((body)=>{
-
-                this.classes[i].bodies.includes(body);
-            })
-            if(found.length >= this.classes[i].pop){
-            } else if(found.length === 0){
-                Composite.add(this.engine.world, this.classes[i].bodies)
-            } else {
-                let adders = this.classes[i].bodies.filter((body)=>{
-                    found.includes(body);
-                })
-                Composite.add(this.engine.world, adders)
-            }
-            window.found = found;
-        }
         Render.run(this.render);
         Runner.run(this.runner, this.engine);
     }
@@ -160,19 +144,21 @@ class MyEngine{
     }
 
     // Reset Button
-    // checkReset(){
-    //     var resetButton = document.getElementById('reset-button')
-    //     resetButton.addEventListener('mousedown',()=>{
-    //         this.stopEngine();
-    //         this.engine.world.bodies.forEach((body)=>{
-    //             console.log(this.engine.world.bodies)
-    //             if(!this.bounds.includes(body)){
-    //                 Composite.remove(this.engine.world, body)
-    //             }
-    //         })
-    //         this.runEngine();
-    //     })
-    // }
+    checkReset(){
+        var resetButton = document.getElementById('reset-button')
+        var list = document.getElementById('ball-list')
+        resetButton.addEventListener('mousedown',()=>{
+            // this.stopEngine();
+            while(list.firstChild){
+                list.removeChild(list.firstChild);
+            }
+            this.classes.forEach((ballClass)=>{
+                Composite.remove(this.engine.world, ballClass.bodies)
+            })
+            this.classes = [];
+            // this.runEngine();
+        })
+    }
 
     // Particle Creation
     checkNewBall(){
@@ -182,6 +168,7 @@ class MyEngine{
         newBall.addEventListener('mousedown', ()=>{
             if(!this.engine.running){
                 var ball = new Ball(this.render, popCount.value)
+                Composite.add(this.engine.world, ball.bodies)
                 this.classes.push(ball)
                 this.classes.forEach((ballClass)=>{
                     ballClass.friends.push(
@@ -221,6 +208,7 @@ class MyEngine{
 
             var created = document.createElement('select');
             created.id = `${thatBall.color}-${thisBall.color}-creation`;
+            created.style.display = 'none'
             myEngine.classes.forEach((ballClass)=>{
                 var option = document.createElement('option');
                 option.value = ballClass.color;
@@ -285,6 +273,7 @@ class MyEngine{
     // Engine checking function
     checkBeforeUpdate(){
 
+
         var clickMagSlider = document.getElementById('click-mag-slider');
 
         var xMagSlider = document.getElementById('x-mag-slider');
@@ -296,10 +285,15 @@ class MyEngine{
         var gravBool;
         var gravMult = 0.05;
 
-        var debugtool = document.getElementById('debug')
         
         Events.on(this.engine, 'beforeUpdate', ()=>{
 
+            let ballDivs = document.querySelectorAll('.ball-div')
+            ballDivs.forEach((ballDiv)=>{
+
+            })
+
+            // set clickMult
             var clickMult = Number(clickMagSlider.value);
 
             if(this.clickStatus === 0){
@@ -309,8 +303,6 @@ class MyEngine{
             } else {
                 this.clickMag = 0.000005 * clickMult
             }
-
-            debugtool.innerHTML = this.engine.world.bodies.length 
 
             // handle universal gravity
             xMagLabel.innerHTML = xMagSlider.value;
@@ -330,9 +322,12 @@ class MyEngine{
             } else {
                 this.engine.gravity.scale = 0
             }
-
+            
+            // interaction & attraction //
             this.classes.forEach((ballClass)=>{
                 ballClass.friends.forEach((friendObj)=>{
+
+                    // interaction
                     let interactionEle = document.getElementById(`${ballClass.color}-${friendObj.ref.color}-interaction`);
                     friendObj.interaction = Number(interactionEle.value)
                     for(let i = 0; i < ballClass.bodies.length; i++){
@@ -357,7 +352,7 @@ class MyEngine{
                                     console.log(this.classes)
                                     let newBall = newBallClass.createBall();
                                     ballClass.bodies.push(newBall);
-                                    Composite.add(engine.world, newBall);
+                                    Composite.add(this.engine.world, newBall);
                                 } else { // on
 
                                 }
@@ -365,23 +360,26 @@ class MyEngine{
                         }
                     }
 
+                    // handle deletion
                     this.classes.forEach((ballClass)=>{
                         ballClass.bodies.forEach((body)=>{
                             if(body.setRemove){
                                 ballClass.removeBody(body);
-                                Composite.remove(engine.world, body);
+                                Composite.remove(this.engine.world, body);
                             }
                         })
                     })
 
+                    // handle attraction with math in helper function
                     var element = document.getElementById(`${ballClass.color}-${friendObj.ref.color}`)
                     var slider = element.querySelector('input[type=range]')
                     friendObj.attraction = Number(slider.value);
                     this.applyGrav(ballClass, friendObj);
-                })
+                }) 
             })
+            // end mega function //
+
         })
-        window.engine = this.engine
     }
 }
 

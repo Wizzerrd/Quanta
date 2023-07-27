@@ -16,11 +16,12 @@ checkButtonListeners();
 myEngine.playPause();
 
 // run engine and check between updates
-// myEngine.runEngine();
+myEngine.runEngine();
+myEngine.stopEngine();
 
 myEngine.checkBounds();
 myEngine.checkClick();
 myEngine.checkNewBall();
-// myEngine.checkReset();
+myEngine.checkReset();
 
 myEngine.checkBeforeUpdate();
