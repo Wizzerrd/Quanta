@@ -1,25 +1,22 @@
 #right {
     display: flex;
     flex-direction: column;
-    width: 10%;
+}
+
+#right > div {
+    background-color: #99b0b0;
 }
 
 #world-settings{
-    background-color: #99b0b0;
+
     display: flex;
     flex-direction: column;
-    overflow: auto;
-    height: 15%;
 }
 
 #ball-list{
-    overflow: auto;
-    height: 100%;
-    background-color: #99b0b0;
 }
 
 #ball-settings{
-    justify-content: center;
 }
 
 #gravity-toggle{
@@ -31,4 +28,25 @@
 .slider-ele{
     display: flex;
     flex-direction: row;
+}
+
+#left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#left-links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+#left-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }

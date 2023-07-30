@@ -9,17 +9,33 @@
     <link rel="icon" type="image/x-icon" href="./assets/icon.ico">
 </head>
 <body>
+
+    <div id="overlay"></div>
+    <div id="popup">
+        <p>
+        </p>
+    </div>
+
     <div id="main">
         <div id="left">
-            <button id="play-pause">PLAY SIMULATION</button>
-            <button id="reset-button">RESET</button>
+            <div id="left-buttons">
+                <button id="play-pause">PLAY SIMULATION</button>
+                <button id="reset-button">RESET</button>
+            </div>
+            <div id="left-links">
+                <a href="https://github.com/Wizzerrd"><img src="./assets/github.png" width="30%"></a>
+                <a href="https://www.linkedin.com/in/luis-laffitte-276238286/"><img src="./assets/linkedin.png" width="50%"></a>
+            </div>
             <!-- <button id="random-button">RANDOM SEED</button>
             <button id="info-button">INFO</button> -->
-            <div id="debug"></div>
         </div>
 
         <div id="mid">
-            <div id="matter"><label id="play-text">PRESS PLAY SIMULATION TO START</label></div>
+            <div id="matter"><label id="play-text">
+                PRESS PLAY SIMULATION TO START <br>
+                ADD PARTICLES AND TWEAK SETTINGS <br>
+                BEFORE STARTING SIMULATION
+            </label></div>
         </div>
 
         <div id="right">
@@ -62,9 +78,8 @@
                 <button id="new-ball">Add a Particle</button>
                 <br>
                 <label>with Population <input type="number" id="pop-counter" max="500" min="1" value="1"></label>
-
-                <div id="ball-list"></div>
             </div>
+            <div id="ball-list"></div>
         </div>
     </div>
 </body>

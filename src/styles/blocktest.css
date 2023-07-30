@@ -1,9 +1,4 @@
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-body div{
+div{
     border: black 1px solid;
 }
 
@@ -12,11 +7,6 @@ body div{
     flex-direction: row;
     background-color: #c6e2e9;
     justify-content: space-between;
-}
-
-#left {
-    display: flex;
-    flex-direction: column;
 }
 
 #mid {
@@ -33,10 +23,22 @@ body div{
 }
 
 #play-text{
+    text-align: center;
     color: white;
     position: absolute;
     top: 50%;
     left: 40%;
+}
+
+#popup {
+    width: 50%;
+    position: absolute;
+    background-color: wheat;
+    left: 25%;
+}
+
+#popup p {
+    text-align: center;
 }
 
 
