@@ -176,7 +176,7 @@ class MyEngine{
                     ballClass.friends.push(
                         {ref: ball,
                             attraction: 0,
-                            interaction: 0}
+                            interaction: 1}
                     )
                 })
                 this.createBallDivs(this)
@@ -203,7 +203,7 @@ class MyEngine{
 
             for(let i = 0; i < options.length; i++){
                 var option = document.createElement('option');
-                option.value = i;
+                option.value = i + 1;
                 option.text = options[i];
                 collisionTog.appendChild(option);
             }
@@ -344,14 +344,12 @@ class MyEngine{
                                     ballClass.bodies[i].setRemove = true;
                                 } else if(friendObj.interaction === 2){ // create
                                     let element = document.getElementById(`${ballClass.color}-${friendObj.ref.color}-creation`);
-                                    console.log(element);
                                     let newBallClass; 
                                     this.classes.forEach((ballClass)=>{
                                         if(ballClass.color === element.value){
                                             newBallClass = ballClass;
                                         }
                                     });
-                                    console.log(this.classes)
                                     let newBall = newBallClass.createBall();
                                     ballClass.bodies.push(newBall);
                                     Composite.add(this.engine.world, newBall);
