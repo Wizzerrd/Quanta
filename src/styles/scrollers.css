@@ -1,6 +1,7 @@
 #right {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 #right > div {
@@ -14,6 +15,8 @@
 }
 
 #ball-list{
+    overflow: auto;
+    size: 70%;
 }
 
 #ball-settings{
@@ -42,6 +45,7 @@
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
+    padding-top: 20px;
 }
 
 #left-buttons{
@@ -49,4 +53,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+#play-pause{
+    background-color: green;
+    padding: 10px 15px 10px 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+#play-pause:hover{
+    cursor: pointer;
+}
+
+#play-pause:active{
+    border: darkslategray 3px solid;   
 }

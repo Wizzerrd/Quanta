@@ -1,3 +1,6 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -46,6 +49,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/blocktest.css ***!
+  \********************************************************************************************************/
 div{
     border: black 1px solid;
 }
@@ -55,6 +61,8 @@ div{
     flex-direction: row;
     background-color: #c6e2e9;
     justify-content: space-between;
+    height: 100vh;
+    max-height: 100vh;
 }
 
 #mid {
@@ -72,7 +80,7 @@ div{
 
 #play-text{
     text-align: center;
-    color: white;
+    color: #345e7d;
     position: absolute;
     top: 50%;
     left: 40%;
@@ -89,11 +97,23 @@ div{
     text-align: center;
 }
 
+body{
+    overflow: hidden;
+}
+
+#play-pause{
+    
+}
 
 
+
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/scrollers.css ***!
+  \********************************************************************************************************/
 #right {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 #right > div {
@@ -107,6 +127,8 @@ div{
 }
 
 #ball-list{
+    overflow: auto;
+    size: 70%;
 }
 
 #ball-settings{
@@ -135,6 +157,7 @@ div{
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
+    padding-top: 20px;
 }
 
 #left-buttons{
@@ -142,7 +165,27 @@ div{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    padding: 25px;
+    box-sizing: border-box;
 }
 
+#play-pause{
+    background-color: green;
+    padding: 10px 15px 10px 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
 
-/*# sourceMappingURL=main.css.map*/
+#play-pause:hover{
+    cursor: pointer;
+}
+
+#play-pause:active{
+    border: darkslategray 3px solid;   
+}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+

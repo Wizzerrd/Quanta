@@ -76,11 +76,14 @@ class MyEngine{
             if(this.engine.running){
                 this.engine.running = false;
                 this.stopEngine();
-                playPause.innerHTML = "PLAY SIMULATION"
+                playPause.innerHTML = "▶"
+                playPause.style.backgroundColor = "green"
+                playText.innerHTML = "PRESS PLAY BUTTON TO START" + "<br />" + "<br />" + "ADD PARTICLES AND TWEAK SETTINGS" + "<br />" + "BEFORE STARTING SIMULATION"
             } else {
                 this.engine.running = true;
                 this.runEngine();
-                playPause.innerHTML = "PAUSE SIMULATION"
+                playPause.innerHTML = "■"
+                playPause.style.backgroundColor = "red"
                 playText.innerHTML= ""
             }
         })
@@ -148,7 +151,6 @@ class MyEngine{
         var resetButton = document.getElementById('reset-button')
         var list = document.getElementById('ball-list')
         resetButton.addEventListener('mousedown',()=>{
-            // this.stopEngine();
             while(list.firstChild){
                 list.removeChild(list.firstChild);
             }
@@ -156,7 +158,7 @@ class MyEngine{
                 Composite.remove(this.engine.world, ballClass.bodies)
             })
             this.classes = [];
-            // this.runEngine();
+
         })
     }
 
@@ -193,9 +195,9 @@ class MyEngine{
             sliderEle.max = 1;
             sliderEle.min = -1;
             sliderEle.value = 0;
-            sliderEle.step = 0.01;
+            sliderEle.step = 0.001;
 
-            let options = ['ON','OFF','CREATE','DESTROY'];
+            let options = ['OFF','CREATE','DESTROY'];
             var collisionTog = document.createElement('select');
             collisionTog.id = `${thatBall.color}-${thisBall.color}-interaction`;
 
@@ -208,7 +210,6 @@ class MyEngine{
 
             var created = document.createElement('select');
             created.id = `${thatBall.color}-${thisBall.color}-creation`;
-            // created.style.display = 'none'
             myEngine.classes.forEach((ballClass)=>{
                 var option = document.createElement('option');
                 option.value = ballClass.color;
@@ -354,8 +355,6 @@ class MyEngine{
                                     let newBall = newBallClass.createBall();
                                     ballClass.bodies.push(newBall);
                                     Composite.add(this.engine.world, newBall);
-                                } else { // on
-
                                 }
                             }
                         }
