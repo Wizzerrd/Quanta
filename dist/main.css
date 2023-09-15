@@ -78,12 +78,16 @@ div{
     position: relative;
 }
 
-#play-text{
+.play-text{
     text-align: center;
-    color: #345e7d;
+    color: black;
+    background-color: #c6e2e9;
+    border: black 3px solid;
+    border-radius: 20px;
     position: absolute;
-    top: 50%;
-    left: 40%;
+    padding: 50px;
+    top: 45%;
+    left: 45%;
 }
 
 #popup {
@@ -101,9 +105,6 @@ body{
     overflow: hidden;
 }
 
-#play-pause{
-    
-}
 
 
 

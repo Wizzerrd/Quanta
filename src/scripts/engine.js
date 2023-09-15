@@ -33,6 +33,7 @@ class MyEngine{
         this.wrapStatus = false;
         this.clickStatus = 0;
         this.clickMag;
+        this.maxParticles = 500;
     }
 
     // Engine creation and running functions
@@ -79,11 +80,13 @@ class MyEngine{
                 playPause.innerHTML = "▶"
                 playPause.style.backgroundColor = "green"
                 playText.innerHTML = "PRESS PLAY BUTTON TO START" + "<br />" + "<br />" + "ADD PARTICLES AND TWEAK SETTINGS" + "<br />" + "BEFORE STARTING SIMULATION"
+                playText.className = "play-text"
             } else {
                 this.engine.running = true;
                 this.runEngine();
                 playPause.innerHTML = "■"
                 playPause.style.backgroundColor = "red"
+                playText.className = ""
                 playText.innerHTML= ""
             }
         })
@@ -284,6 +287,8 @@ class MyEngine{
         var yMagLabel = document.getElementById('y-mag-value');
 
         var gravTog = document.getElementById('gravity-toggle');
+        var maxParticlesInput = document.getElementById('max-particles-input')
+
         var gravBool;
         var gravMult = 0.05;
 
@@ -294,6 +299,8 @@ class MyEngine{
             ballDivs.forEach((ballDiv)=>{
 
             })
+
+            this.maxParticles = Number(maxParticlesInput.value)
 
             // set clickMult
             var clickMult = Number(clickMagSlider.value);
@@ -343,16 +350,20 @@ class MyEngine{
                                 } else if(friendObj.interaction === 3){ // destroy
                                     ballClass.bodies[i].setRemove = true;
                                 } else if(friendObj.interaction === 2){ // create
-                                    let element = document.getElementById(`${ballClass.color}-${friendObj.ref.color}-creation`);
-                                    let newBallClass; 
-                                    this.classes.forEach((ballClass)=>{
-                                        if(ballClass.color === element.value){
-                                            newBallClass = ballClass;
-                                        }
-                                    });
-                                    let newBall = newBallClass.createBall();
-                                    ballClass.bodies.push(newBall);
-                                    Composite.add(this.engine.world, newBall);
+                                    if(this.maxParticles > this.engine.world.bodies.length){
+                                        console.log(this.engine.world.bodies.length)
+                                        let element = document.getElementById(`${ballClass.color}-${friendObj.ref.color}-creation`);
+                                        let newBallClass; 
+                                        this.classes.forEach((ballClass)=>{
+                                            if(ballClass.color === element.value){
+                                                newBallClass = ballClass;
+                                            }
+                                        });
+                                        let newBall = newBallClass.createBall();
+                                        ballClass.bodies.push(newBall);
+                                        Composite.add(this.engine.world, newBall);
+
+                                    }
                                 }
                             }
                         }
