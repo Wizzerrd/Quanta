@@ -49,6 +49,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+body *{
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 /*!********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/blocktest.css ***!
   \********************************************************************************************************/
@@ -182,6 +186,129 @@ body{
 
 #play-pause:active{
     border: darkslategray 3px solid;   
+}
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/modal.css ***!
+  \****************************************************************************************************/
+#help-me{
+    margin-top: 10px;
+}
+
+#modal{
+    /* display: none; */
+    position: relative;
+}
+
+#modal * {
+    border: none;
+}
+
+#overlay{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 20%;
+    z-index: 15;
+}
+
+#popup{
+    border: 5px solid #345e7d;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    top: 10vh;
+    left: 10vw;
+    background-color: #778899;
+    z-index: 20;
+    border-radius: 20px;
+    overflow-y: auto;
+}
+
+#popup h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#popup h2{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#popup h3{
+    font-size: 45px;
+    font-weight: bold;
+}
+
+#popup h4{
+    font-size: 32px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#popup h5{
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#popup p{
+    font-size: 24px;
+}
+
+#popup > * {
+    margin: 1%;
+}
+
+.wide-img{
+    width: 90%;
+}
+
+.whole-img{
+    width: 60%;
+}
+
+#start-demo{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#world-demo{
+    display: flex;
+    flex-direction: column;
+}
+
+.set-demo{
+    display: flex;
+}
+
+#pop-demo{
+    display: flex;
+    justify-content: center;
+}
+
+.pop-demo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#part-demo{
+    display: flex;
+}
+
+#run-demo{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#close-button{
+    margin-top: 5%;
+    font-size: 30px;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
