@@ -174,14 +174,20 @@ class MyEngine{
             if(!this.engine.running){
                 var ball = new Ball(this.render, popCount.value)
                 Composite.add(this.engine.world, ball.bodies)
-                this.classes.push(ball)
-                this.classes.forEach((ballClass)=>{
+                this.classes.forEach(ballClass => {
+                    ball.friends.push({
+                        ref: ballClass,
+                        attraction: 0,
+                        interaction: 1
+                    })
                     ballClass.friends.push(
                         {ref: ball,
                             attraction: 0,
                             interaction: 1}
                     )
                 })
+
+                this.classes.push(ball)
                 this.createBallDivs(this)
             }
         })
@@ -351,7 +357,6 @@ class MyEngine{
                                     ballClass.bodies[i].setRemove = true;
                                 } else if(friendObj.interaction === 2){ // create
                                     if(this.maxParticles > this.engine.world.bodies.length){
-                                        console.log(this.engine.world.bodies.length)
                                         let element = document.getElementById(`${ballClass.color}-${friendObj.ref.color}-creation`);
                                         let newBallClass; 
                                         this.classes.forEach((ballClass)=>{
