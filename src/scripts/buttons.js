@@ -26,6 +26,24 @@ function checkButtonListeners(){
         }
     })
 
+    const modal = document.getElementById('modal');
+
+    // Show the modal
+    function showModal() {
+        modal.style.display = 'block';
+    }
+    
+    // Hide the modal
+    function hideModal() {
+        modal.style.display = 'none';
+    }
+
+    // Add an event listener to the show button
+    document.getElementById('help-me').addEventListener('click', showModal);
+    
+    // // Add an event listener to the close button
+    document.getElementById('overlay').addEventListener('click', hideModal);
+    document.getElementById('close-button').addEventListener('click', hideModal);
     
 }
 

@@ -10,10 +10,100 @@
 </head>
 <body>
 
-    <div id="overlay"></div>
-    <div id="popup">
-        <p>
-        </p>
+    <div id="modal">
+        <div id="overlay"></div>
+        <div id="popup">
+            <h1>Emergent Quanta: Instructions</h1>
+
+            <div id="start-demo">
+                <img class="whole-img" src="./assets/start.PNG"/>
+                <div>
+                    <h2>From Dust...</h2>
+                    <h4>To begin the simulation, you press the green play button in the top left.
+                        If you have not added any particles at this point this would be pretty boring as you wouldn't
+                        have anything to look at. If you want to go back to a fresh canvas, press the reset
+                        button under the play button. Do note that this does not automatically pause the simulation.
+                        <br>
+                        <br>
+                        Continue scrolling for a more in depth explanation of the controls
+                    </h4>
+                </div>
+            </div>
+            <div id="world-demo">
+                <div class="set-demo">
+                    <img class="set-img" src="./assets/worldmenu.PNG"/>
+                    <div class="set-words">
+                        <h3>World Settings</h3>
+                        <br>
+
+                        <h5>Boundary:</h5>
+                        <p>Can be toggled on or off, with particles wrapping around when off</p>
+                        <br>
+
+                        <h5>Max Particles:</h5>
+                        <p>Prevents the creation of any more particles by interactions when the limit is reached</p>
+                        <br>
+
+                        <h5>Click Settings:</h5>
+                        <p>Clicking can either be disabled, repel particles, or attract particles, and the magnitude can be set by the slider.</p>
+                        <br>
+
+                        <h5>Gravity Settings:</h5>
+                        <p>Sets the global gravity for the simulation, which applies constant force to all particles. This can be toggled and the magnitude set in the X or Y direction with the sliders.</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="set-demo">
+                    <img class="set-img" src="./assets/partmenu.PNG"/>
+                    <div class="set-words">
+                        <h3>Adding Particles with Particle Settings</h3>
+                        <h4>This menu allows you to add a new class of particles. 
+                            When creating a class, you must set how many particles of that class you want to populate by setting the population field prior to creation. 
+                            You cannot retroactively set the population.
+                            <br>
+                            You also cannot create a class of particles while the simulation is running. The simulation must be paused with the button in the top left if it is running in order to create new particles
+                        </h4>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div id="pop-demo">
+                <div class="pop-demo">
+                    <img class="set-img" src="./assets/partmenu.PNG"/>
+                    <img class="wide-img" src="./assets/1part.PNG"/>
+                </div>
+                <div class="pop-demo">
+                    <img class="set-img" src="./assets/partmenu100.PNG"/>
+                    <img class="wide-img" src="./assets/100part.PNG"/>
+                </div>
+            </div>
+
+            <div id="part-demo">
+                <img class="part-img" src="./assets/intmenu.PNG">
+                <div class="part-words">
+                    <h3>Particle Interactions via the Particle Settings Menu</h3>
+                    <p>The background color of a set of interactions determines which particle class is being interacted with. The first box of a color shows the RGB code associated with that particle class. This code identifies the class and how it interacts with other classes.</p>
+                    <br>
+                    <p>Each section represents an interaction with another class of particles. The slider determines attraction/repulsion, and the drop-down boxes set the interaction type. OFF just means a collision, CREATE creates a particle of the kind selected from the next drop-down, and DESTROY will destroy the particle that is run into.</p>
+                </div>
+            </div>
+            
+            <div id="run-demo">
+                <div>
+                    <h2>...To Dust</h2>
+                    <h4>
+                        Once you have some particles created and some interactions set you can play the simulation. One thing to keep in mind is when a particle class is created it resets the interactions you have defined before.
+                        <br>
+                        <br>
+                        Congratulations, you made it through the instructions, now you can go out there and play God.
+                        <br>
+                        <button id="close-button">Close Instructions</button>
+                    </h4>
+                </div>
+                <img class="whole-img" src="./assets/running.PNG"/>
+            </div>
+
+        </div>
     </div>
 
     <div id="main">
@@ -21,6 +111,7 @@
             <div id="left-buttons">
                 <button id="play-pause">▶</button>
                 <button id="reset-button">RESET</button>
+                <button id="help-me">HELP</button>
             </div>
             <div id="left-links">
                 <a href="https://github.com/Wizzerrd"><img src="./assets/github.png" width="30%"></a>
@@ -32,7 +123,7 @@
             <div id="matter"><label class="play-text" id="play-text">
                 PRESS PLAY BUTTON TO START <br><br>
                 ADD PARTICLES AND TWEAK SETTINGS <br>
-                BEFORE STARTING SIMULATION
+                BEFORE STARTING SIMULATION<br>
             </label></div>
         </div>
 
