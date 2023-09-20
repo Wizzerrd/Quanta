@@ -22,7 +22,11 @@ class Ball{
         this.render = render;
         this.pop = pop;
         this.bodies = this.populate();
-        this.friends = []
+        this.friends = [{
+            ref: this,
+            attraction: 0,
+            interaction: 1
+        }]
     }
 
     createBall(){
