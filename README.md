@@ -1,5 +1,5 @@
 # Emergent Quanta (A particle simulation integrating particle collision, destruction, and creation) #
-[Javascript Demo](https://wizzerrd.github.io/jsProjectLuis/)
+[Javascript Demo](https://wizzerrd.github.io/Quanta/)
 
 "Complex systems produce surprising behaviour; in fact, they produce behavioral patterns and properties that just cannot be predicted from knowledge of their parts taken in isolation. The appearance of emergent properties is probably the single most distinguishing feature of complex systems. An example of this phenomenon is the Game of Life, a simple board game created in the late 1960s by American mathematician John Conway ... that displays many intriguing examples of emergence. Another example of emergence occurs in the global behaviour of an ant colony." - Encyclopedia Brtiannica
 
