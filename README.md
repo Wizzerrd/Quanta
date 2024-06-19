@@ -36,3 +36,5 @@ Finally, the number of types of particles is arbitrary, so I had to create a men
 ## TO DO: ("*" indicates an upcoming feature) ##
 - toggle rigid-body interactions
 - tweak particle mass and radius
+
+
